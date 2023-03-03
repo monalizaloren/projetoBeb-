@@ -5,12 +5,15 @@ status = "";
 
 function preload()
 {
-	song = loadSound("alert.mp3");
+  //Utilize 'loadSound' para carregar a música 'alert.mp3'
+	song = ???("???.mp3");
 }
 
 function setup() {
-  canvas = createCanvas(380, 380);
-  canvas.center();
+  //Crie um cava com 380 de largura e 38 de alturaa
+  //???
+  //Coloque o canva no centro
+  //???
   video = createCapture(VIDEO);
   video.size(380,380);
   video.hide();
@@ -18,7 +21,8 @@ function setup() {
 
 function start() {
   objectDetector = ml5.objectDetector('cocossd', modelLoaded);
-  document.getElementById("status").innerHTML = "Status: Detectando Objetos";
+  //Utilize o código que altera o HTML utilizando javascript
+  document.getElementById("status").??? = "Status: Detectando Objetos";
 }
 
 function modelLoaded() {
@@ -27,8 +31,9 @@ function modelLoaded() {
 }
 
 function gotResult(error, results) {
+  //mostre o erro no console, se acontecer um erro
   if (error) {
-    console.log(error);
+    //???
   }
   console.log(results);
   objects = results;
@@ -55,14 +60,17 @@ function draw() {
          
           if(objects[i].label == "person")
           {
-            document.getElementById("numberOfObjects").innerHTML = "Bebê encontrado";
+            //Se for uma pessoa, mostre na tela o texto 'Bebê encontrado'
+            document.getElementById("numberOfObjects").innerHTML = "???";
             console.log("stop");
             song.stop();
           }
           else
           {
-            document.getElementById("numberOfObjects").innerHTML = "Bebê não encontrado";
+            //Se for um bebê, mostre na tela o texto 'Bebê não encontrado'
+            document.getElementById("numberOfObjects").innerHTML = "???";
             console.log("play"); 
+            //Utilize o código 'song.play' para a música começar.
             song.play();
           }
          }
